@@ -1,0 +1,35 @@
+<script>
+var ScarabQueue = ScarabQueue || [];
+(function(id) {
+  if (document.getElementById(id)) return;
+  var js = document.createElement('script'); js.id = id;
+  js.src = '//cdn.scarabresearch.com/js/1A65B5CB868AFF1E/scarab-v2.js';
+  var fs = document.getElementsByTagName('script')[0];
+  fs.parentNode.insertBefore(js, fs);
+})('scarab-js-api');
+</script>
+
+<!-- HOME recommendations will be rendered in div#topic1...div#topic10 -->
+<div id="topic1"></div>
+<div id="topic2"></div>
+<div id="topic3"></div>
+<div><h4>My custom content</h4><p>Check out all these great offers!</p></div>
+<div id="topic4"></div>
+<div id="topic5"></div>
+<div id="topic6"></div>
+<div id="topic7"></div>
+<div id="topic8"></div>
+<div id="topic9"></div>
+<div id="topic10"></div>
+
+<script type="text/html" id="simple-tmpl" >
+<![CDATA[
+    <h4>{{=SC.title}}</h4>
+    {{ for (var i=0; i < SC.page.products.length; i++) { }}
+      {{ var p = SC.page.products[i]; }}
+      <span data-scarabitem="{{= p.id }}" style="display: inline-block" class="rec-item">
+          <a href="{{=p.link}}" target="_blank"><img src="{{=p.image}}" class="rec-image" title="{{=p.title}}"></a>
+      </span>
+    {{ } }}
+]]>
+</script>

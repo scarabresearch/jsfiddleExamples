@@ -1,0 +1,11 @@
+body {
+    background: white;
+    font-family: sans-serif;
+}
+.rec-item {
+    text-align: center;
+}
+.rec-image {
+    max-width: 80px;
+    max-height: 80px;
+}
